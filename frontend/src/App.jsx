@@ -9,21 +9,28 @@ import Store from './pages/Store';
 import ConatctUs from './pages/ContactUs';
 import Profile from './pages/Profile';
 import Cart from './pages/Cart';
+import Footer from './components/Footer';
 
 function App() {
 
   return (
     <Router>
-      <NavBar />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<AboutUs />} />
-        <Route path="/store" element={<Store />} />
-        <Route path="/contact" element={<ConatctUs />} />
-        <Route path="/profile" element={<Profile />} />
-        <Route path="/cart" element={<Cart />} />
-      </Routes>
+      <div className='flex flex-col min-h-screen'>
+        <NavBar />
+        <div className="container mx-auto px-4 flex-grow">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<AboutUs />} />
+            <Route path="/store" element={<Store />} />
+            <Route path="/contact" element={<ConatctUs />} />
+            <Route path="/profile" element={<Profile />} />
+            <Route path="/cart" element={<Cart />} />
+          </Routes>
+        </div>
+        <Footer />
+      </div>
     </Router>
+
   )
 }
 

@@ -17,9 +17,10 @@ export default function Footer() {
         <div className="mt-2 text-left space-x-5">
           <h3 className='font-bold text-18px pb-2'>Quick Links</h3>
           <div className='flex flex-col gap-2'>
-            <a href="/about" className="hover:underline">About</a>
+            <a href="/" className="hover:underline">Home</a>
+            <a href="/about" className="hover:underline">About Us</a>
+            <a href="/store" className="hover:underline">Store</a>
             <a href="/contact" className="hover:underline">Contact</a>
-            <a href="/privacy" className="hover:underline">Privacy Policy</a>
           </div>
         </div>
 

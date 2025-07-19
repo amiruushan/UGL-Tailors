@@ -60,40 +60,17 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 }));
 
 export default function NavBar() {
-  const [drawerOpen, setDrawerOpen] = useState(false);
   const [query, setQuery] = useState('');
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
   const location = useLocation();
 
 
-  const toggleDrawer = () => {
-    setDrawerOpen(!drawerOpen);
-  };
-
   const handleKeyPress = (e) => {
     if (e.key === 'Enter') {
       console.log("Search:", query);
     }
   };
-
-  const drawer = (
-    <Box sx={{ width: 250 }} onClick={toggleDrawer}>
-      <List>
-        <ListItem button component={Link} to="/">
-          <ListItemText primary="Home" />
-        </ListItem>
-        <ListItem button component={Link} to="/movie/fav">
-          <ListItemText primary="Favorites" />
-        </ListItem>
-        <ListItem>
-          <IconButton component={Link} to="/profile" color="inherit">
-            <PersonIcon />
-          </IconButton>
-        </ListItem>
-      </List>
-    </Box>
-  );
 
   return (
     <>
@@ -148,12 +125,7 @@ export default function NavBar() {
             )}
           </Box>
         </Toolbar>
-
       </AppBar>
-
-      <Drawer anchor="right" open={drawerOpen} onClose={toggleDrawer}>
-        {drawer}
-      </Drawer>
     </>
   );
 }

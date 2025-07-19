@@ -1,12 +1,10 @@
 import React from 'react';
 import { Box, Typography,Button,Grid,Paper,List,ListItem, ListItemIcon, ListItemText } from '@mui/material';
 import backgroundImage from '../assets/CoverPage.jpg';
+import uniform from '../assets/uniform.png';
 import StorefrontIcon from '@mui/icons-material/Storefront';
 import { Link } from 'react-router-dom';
-import MilitaryTechIcon from '@mui/icons-material/MilitaryTech';
-import FiberManualRecordIcon from '@mui/icons-material/FiberManualRecord';
-import SchoolIcon from '@mui/icons-material/School';
-import Footer from '../components/Footer';
+import NavigateNextIcon from '@mui/icons-material/NavigateNext';
 
 export default function HomePage() {
   return (
@@ -69,59 +67,62 @@ export default function HomePage() {
 
         {/* second pace - featured products */}
         <Box sx={{display:'flex',flexDirection:'column', py: 6, px: 3, textAlign: 'center',width:'100%', maxWidth:'none' }}>
-          <Typography variant="h4" fontWeight="bold">Who We Serve</Typography>
-          
-          <Grid container spacing={4} sx={{ mt: 4,width:'100%' }} justifyContent="center" >
-            {/* KDU Students */}
-            <Grid item xs={12} sm={6} md={6} sx={{width:'40%'}}>
-              <Paper 
-                elevation={3} 
-                sx={{ 
-                  p: 3, 
-                  height: '50%', 
-                  minHeight: '200px', 
-                  display: 'flex', 
-                  flexDirection: 'column', 
-                  justifyContent: 'center' 
-                }}
-              >
-                <Typography variant="h6" sx={{ mb: 2 }}><SchoolIcon sx={{ verticalAlign: 'middle', mr: 1 }} />KDU Students</Typography>
-                <List>
-                  {['No6 Kit', 'PT Uniform', 'Shoes', 'Accessories'].map((item, index) => (
-                    <ListItem key={index} disablePadding>
-                      <ListItemIcon><FiberManualRecordIcon sx={{ fontSize: 8 }} /></ListItemIcon>
-                      <ListItemText primary={item} />
-                    </ListItem>
-                  ))}
-                </List>
-              </Paper>
-            </Grid>
+          <Typography variant="h4" fontWeight="bold">Tailored to Serve. Designed to Fit.</Typography>
+          <hr className="border-t border-black my-4 w-[75%] mx-auto" />
 
-            {/* Sri Lankan Army */}
-            <Grid item xs={12} sm={6} md={6} sx={{width:'40%'}}>
-              <Paper 
-                elevation={3} 
-                sx={{ 
-                  p: 3, 
-                  height: '50%', 
-                  minHeight: '200px', 
-                  display: 'flex', 
-                  flexDirection: 'column', 
-                  justifyContent: 'center' 
+          <div className='flex flex-row justify-evenly'>
+            <Box sx={{width:'450px',height:'300px', background:'#EEEFE0', textAlign:'left',alignContent:'center',borderRadius: '16px',padding:2,display:'flex'}}>
+              <div className='w-[50%] flex flex-col justify-center items-start'>
+                <Typography variant='h4' sx={{fontWeight:'bold', alignItems:'center'}}>Tailored Uniforms</Typography>
+                <Typography variant='body2'>Includes all full clothing sets and core wearables</Typography>
+                <Button endIcon={<NavigateNextIcon/>} href='/store'>Visit Store</Button>
+              </div>
+              <Box
+                sx={{
+                  width: '50%',
+                  backgroundImage: `url(${uniform})`,
+                  backgroundSize: 'cover',
+                  backgroundPosition: 'center',
+                  borderRadius: '0 16px 16px 0'
                 }}
-              >
-                <Typography variant="h6" sx={{ mb: 2 }}><MilitaryTechIcon sx={{ verticalAlign: 'middle', mr: 1 }} />Sri Lankan Army</Typography>
-                <List>
-                  {['No4 Uniform', 'Boots', 'Badges', 'Berets'].map((item, index) => (
-                    <ListItem key={index} disablePadding>
-                      <ListItemIcon><FiberManualRecordIcon sx={{ fontSize: 8 }} /></ListItemIcon>
-                      <ListItemText primary={item} />
-                    </ListItem>
-                  ))}
-                </List>
-              </Paper>
-            </Grid>
-          </Grid>
+              />
+            </Box>
+
+            <Box sx={{width:'450px',height:'300px', background:'#EEEFE0', textAlign:'left',alignContent:'center',borderRadius: '16px',padding:2,display:'flex'}}>
+              <div className='w-[50%] flex flex-col justify-center items-start'>
+                <Typography variant='h4' sx={{fontWeight:'bold'}}>Accessories</Typography>
+                <Typography variant='body2'>Includes all smaller gear, decorations, and wearable additions</Typography>
+                <Button endIcon={<NavigateNextIcon/>} href='/store'>Visit Store</Button>
+              </div>
+              <Box
+                sx={{
+                  width: '50%',
+                  backgroundImage: `url(${uniform})`,
+                  backgroundSize: 'cover',
+                  backgroundPosition: 'center',
+                  borderRadius: '0 16px 16px 0' // match rounding on the right side
+                }}
+              />
+            </Box>
+
+            <Box sx={{width:'450px',height:'300px', background:'#EEEFE0', textAlign:'left',alignContent:'center',borderRadius: '16px',padding:2,display:'flex'}}>
+              <div className='w-[50%] flex flex-col justify-center items-start'>
+                <Typography variant='h4' sx={{fontWeight:'bold'}}>Footwear & Care</Typography>
+                <Typography variant='body2'>Includes shoes, socks, and maintenance gear</Typography>
+                <Button endIcon={<NavigateNextIcon/>} href='/store'>Visit Store</Button>
+              </div>
+              <Box
+                sx={{
+                  width: '50%',
+                  backgroundImage: `url(${uniform})`,
+                  backgroundSize: 'cover',
+                  backgroundPosition: 'center',
+                  borderRadius: '0 16px 16px 0' // match rounding on the right side
+                }}
+              />
+            </Box>
+          </div>
+
         </Box>
 
         {/* Display popular Products List */}
